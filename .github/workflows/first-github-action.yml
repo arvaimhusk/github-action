@@ -15,8 +15,8 @@ jobs:
       - name: print folder including hidden in long format
         run: ls -la
 
-      - name: fail on purpose
-        run: exit 1
+      #- name: fail on purpose
+      #  run: exit 1
 
       - name: pass on purpose
         run: exit 0
