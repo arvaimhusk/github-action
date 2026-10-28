@@ -1,0 +1,14 @@
+{ "jobs": {
+        "runs-on": "ubuntu-latest",
+        "steps": [
+            {
+                "run": "echo one"
+            },
+            {
+                "name": "two",
+                "run": "echo two"
+            }
+        ]
+    }
+
+}

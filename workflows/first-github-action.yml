@@ -1,0 +1,14 @@
+name: Say Hello
+
+on: workflow_dispatch
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello
+        run: echo "Hello B !"
+
+      - name: Print My pasth
+        run: pwd
+
