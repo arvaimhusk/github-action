@@ -12,3 +12,6 @@ jobs:
       - name: Print My pasth
         run: pwd
 
+      - name: print folder including hidden in long format
+        run: ls -la
+
