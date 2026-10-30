@@ -21,3 +21,10 @@ jobs:
       - name: pass on purpose
         run: exit 0
 
+  checking:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        run: actions/checkout@v4
+
+
