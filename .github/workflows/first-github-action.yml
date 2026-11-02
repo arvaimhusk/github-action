@@ -24,9 +24,12 @@ jobs:
   checking:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: checkout to code
         uses: actions/checkout@v4
       - run: ls -la
 
-
-
+      - name: install specific node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "26.13.0"
+      - run: node -v
