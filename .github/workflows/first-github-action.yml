@@ -40,11 +40,20 @@ jobs:
       - run: node -v
 
 
-  playwright-test:
+  # playwright-test:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #       - uses: actions/checkout@v4
+  #       - uses: actions/setup-node@v4
+  #       - run: npm init playwright@latest
+  #       - run: playwright -v
+
+
+  environment-variables:
     runs-on: ubuntu-latest
+    env:
+      NAME: shivakumar
     steps:
-        - uses: actions/checkout@v4
-        - uses: actions/setup-node@v4
-        - run: npm init playwright@latest
-        - run: playwright -v
+      - run: echo "$NAME"
+
 
