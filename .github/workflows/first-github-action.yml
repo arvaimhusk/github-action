@@ -61,4 +61,15 @@ jobs:
     steps:
       - run: echo "${{secrets.NAME}}"
 
+  using-var-diff-steps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: store key and value onto output
+        id: picker
+        run: echo "color=red" >> $GITHUB_OUTPUT
+
+      - name: access color
+        run: echo "the color is ${{ steps.picker.outputs.color}}"
+
+
 
