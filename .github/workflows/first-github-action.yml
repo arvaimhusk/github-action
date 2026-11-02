@@ -56,4 +56,9 @@ jobs:
     steps:
       - run: echo "$NAME"
 
+  github-secretes:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{secrets.NAME}}"
+
 
