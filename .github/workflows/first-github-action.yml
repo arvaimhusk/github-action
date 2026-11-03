@@ -49,7 +49,7 @@ jobs:
   #       - run: playwright -v
 
 
-  environment-variables:
+  using-environment-variables:
     runs-on: ubuntu-latest
     env:
       NAME: shivakumar
@@ -91,6 +91,29 @@ jobs:
           echo "Memory:"; free -h
           echo "Disk:"; df -h /
           echo "OS:"; cat /etc/os-release | head -2
+
+  using-if-failure-on-jobs:
+      needs: fail-this-intentionally
+      if: failure()
+      runs-on: ubuntu-latest
+      steps:
+        - name: check node version
+          run: node -v
+
+
+  using-if-failure-on-step:
+    runs-on: ubuntu-latest
+    steps:
+      - name: intension exit
+        run: exit 1
+
+
+      - name: check node version
+        if: failure()
+        run: node -v
+
+
+
 
 
 
