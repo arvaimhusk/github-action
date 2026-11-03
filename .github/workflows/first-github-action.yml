@@ -68,7 +68,7 @@ jobs:
       - name: fail this job
         run: exit 1
 
-  skipped-job:
+  this-job-skipped-because-of-prev-job-exit:
     needs: fail-this-intentionally
     runs-on: ubuntu-latest
     steps:
