@@ -61,6 +61,20 @@ jobs:
     steps:
       - run: echo "${{secrets.NAME}}"
 
+
+  fail-this-intentionally:
+    runs-on: ubuntu-latest
+    steps:
+      - name: fail this job
+        run: exit 1
+
+  skipped-job:
+    needs: fail-this-intentionally
+    runs-on: ubuntu-latest
+    steps:
+      - name: this is simply a job that get's skipped
+        run: node -v
+
   using-var-diff-steps:
     runs-on: ubuntu-latest
     steps:
@@ -70,6 +84,16 @@ jobs:
 
       - name: access color
         run: echo "the color is ${{ steps.picker.outputs.color}}"
+
+      - name: Show machine specs
+        run: |
+          echo "CPU cores:"; nproc
+          echo "Memory:"; free -h
+          echo "Disk:"; df -h /
+          echo "OS:"; cat /etc/os-release | head -2
+
+
+
 
 
 
